@@ -1,0 +1,8 @@
+{
+	"id": "list-code-block-indent",
+	"name": "List Code Block Indent",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Keeps fenced code blocks aligned with the current unordered list level.",
+	"isDesktopOnly": false
+}
