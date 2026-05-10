@@ -1,6 +1,6 @@
 {
 	"name": "ignoremd",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Adds a hover formatting toolbar for Markdown headings, emphasis, lists, links, and code.",
 	"main": "main.js",
 	"type": "module",

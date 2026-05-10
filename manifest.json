@@ -1,7 +1,7 @@
 {
 	"id": "ignoremd",
 	"name": "ignoreMD",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Adds a hover formatting toolbar for Markdown headings, emphasis, lists, links, and code.",
 	"author": "zhanpeng329-arch",
