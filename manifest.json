@@ -1,11 +1,9 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "ignoremd",
+	"name": "ignoreMD",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Adds a hover formatting toolbar for Markdown headings, emphasis, lists, links, and code.",
+	"author": "zhanpeng329-arch",
 	"isDesktopOnly": false
 }

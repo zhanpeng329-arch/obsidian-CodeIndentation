@@ -1,8 +1,133 @@
-/*
+.ignoremd-format-trigger,
+.ignoremd-format-panel,
+.ignoremd-format-action {
+	box-sizing: border-box;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.ignoremd-format-trigger {
+	position: fixed;
+	z-index: var(--layer-popover);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2px;
+	width: 48px;
+	height: 34px;
+	padding: 0 5px;
+	color: var(--text-accent);
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 7px;
+	box-shadow: var(--shadow-s);
+	cursor: pointer;
+	opacity: 0.9;
+	transition:
+		opacity 120ms ease,
+		background-color 120ms ease,
+		border-color 120ms ease,
+		box-shadow 120ms ease,
+		transform 120ms ease;
+}
 
-If your plugin does not need CSS, delete this file.
+.ignoremd-format-trigger:hover,
+.ignoremd-format-trigger.is-active {
+	opacity: 1;
+	background: var(--background-secondary);
+	border-color: var(--interactive-accent);
+	box-shadow: var(--shadow-l);
+	transform: translateY(-1px);
+}
 
-*/
+.ignoremd-format-trigger.is-hidden,
+.ignoremd-format-panel.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.ignoremd-format-trigger-label {
+	min-width: 20px;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.ignoremd-format-trigger-handle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 14px;
+	color: var(--text-muted);
+}
+
+.ignoremd-format-trigger-handle svg {
+	width: 13px;
+	height: 13px;
+}
+
+.ignoremd-format-panel {
+	position: fixed;
+	z-index: var(--layer-popover);
+	display: grid;
+	grid-template-columns: repeat(7, 34px);
+	gap: 4px;
+	width: max-content;
+	max-width: calc(100vw - 24px);
+	padding: 7px;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	box-shadow: var(--shadow-l);
+	opacity: 1;
+	transition:
+		opacity 120ms ease,
+		transform 120ms ease;
+}
+
+.ignoremd-format-action {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	padding: 0;
+	color: var(--text-normal);
+	background: transparent;
+	border: 0;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.ignoremd-format-action:hover,
+.ignoremd-format-action:focus-visible {
+	color: var(--text-accent);
+	background: var(--background-modifier-hover);
+	outline: none;
+}
+
+.ignoremd-format-action svg {
+	width: 18px;
+	height: 18px;
+}
+
+.ignoremd-format-action-text {
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.ignoremd-format-action[data-format-action="bold"] .ignoremd-format-action-text {
+	font-size: 15px;
+}
+
+.ignoremd-format-action[data-format-action="italic"] .ignoremd-format-action-text {
+	font-size: 15px;
+	font-style: italic;
+}
+
+.ignoremd-format-action[data-format-action="highlight"] .ignoremd-format-action-text {
+	padding: 2px 4px;
+	color: var(--text-normal);
+	background: var(--text-highlight-bg);
+	border-radius: 4px;
+}

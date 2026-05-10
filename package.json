@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "ignoremd",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "Adds a hover formatting toolbar for Markdown headings, emphasis, lists, links, and code.",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {
