@@ -1,8 +1,294 @@
-/*
+.theme-light,
+.theme-dark {
+	--lcbi-code-bg: var(--background-secondary);
+	--lcbi-code-border: var(--background-modifier-border);
+	--lcbi-code-hover-border: var(--interactive-accent);
+	--lcbi-code-hover-ring: color-mix(in srgb, var(--interactive-accent) 35%, transparent);
+	--lcbi-code-title: var(--text-muted);
+	--lcbi-code-line-number: var(--text-faint);
+	--lcbi-code-radius: 8px;
+	--lcbi-code-line-height: 1.65;
+	--lcbi-menu-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+	--lcbi-menu-width: 266px;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.lcbi-block-menu-button {
+	position: fixed;
+	z-index: var(--layer-popover);
+	display: grid;
+	width: 72px;
+	height: 26px;
+	grid-template-columns: minmax(24px, 1fr) 13px 14px;
+	align-items: center;
+	justify-content: center;
+	gap: 3px;
+	padding: 0 5px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	background: var(--background-primary);
+	box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+	color: var(--text-muted);
+	line-height: 1;
+	cursor: pointer;
+}
 
-If your plugin does not need CSS, delete this file.
+.lcbi-block-menu-button-label,
+.lcbi-block-menu-button-grip,
+.lcbi-block-menu-button-chevron {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
 
-*/
+.lcbi-block-menu-button-label {
+	overflow: hidden;
+	color: var(--interactive-accent);
+	font-size: 13px;
+	font-weight: 500;
+	text-overflow: clip;
+	white-space: nowrap;
+}
+
+.lcbi-block-menu-button-grip {
+	color: var(--text-faint);
+	font-size: 13px;
+	letter-spacing: 0;
+}
+
+.lcbi-block-menu-button-chevron svg {
+	width: 14px;
+	height: 14px;
+}
+
+.lcbi-block-menu-button:hover {
+	border-color: var(--interactive-accent);
+	color: var(--interactive-accent);
+}
+
+.lcbi-heading-marker {
+	display: inline-block;
+	margin-right: 0.16em;
+	color: var(--text-muted);
+	font-family: var(--font-interface);
+	font-weight: inherit;
+	line-height: inherit;
+	vertical-align: baseline;
+}
+
+.lcbi-block-menu {
+	position: fixed;
+	z-index: var(--layer-popover);
+	width: var(--lcbi-menu-width);
+	padding: 8px 0;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	background: var(--background-primary);
+	box-shadow: var(--lcbi-menu-shadow);
+}
+
+.lcbi-block-menu-format-grid {
+	display: grid;
+	grid-template-columns: repeat(7, 30px);
+	gap: 8px 5px;
+	padding: 6px 12px 8px;
+}
+
+.lcbi-block-menu-format {
+	display: flex;
+	width: 30px;
+	height: 30px;
+	align-items: center;
+	justify-content: center;
+	border: 0;
+	border-radius: 6px;
+	background: transparent;
+	color: var(--text-normal);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.lcbi-block-menu-format svg {
+	width: 18px;
+	height: 18px;
+}
+
+.lcbi-block-menu-format:hover,
+.lcbi-block-menu-row:hover {
+	background: var(--background-modifier-hover);
+	color: var(--interactive-accent);
+}
+
+.lcbi-block-menu-separator {
+	height: 1px;
+	margin: 7px 0;
+	background: var(--background-modifier-border);
+}
+
+.lcbi-block-menu-row-section {
+	display: grid;
+	gap: 2px;
+	padding: 0 8px;
+}
+
+.lcbi-block-menu-row {
+	display: grid;
+	width: 100%;
+	height: 36px;
+	grid-template-columns: 28px minmax(0, 1fr) 20px;
+	align-items: center;
+	padding: 0 8px;
+	border: 0;
+	border-radius: 6px;
+	background: transparent;
+	color: var(--text-normal);
+	font-size: 14px;
+	line-height: 1;
+	text-align: left;
+	cursor: pointer;
+}
+
+.lcbi-block-menu-row.is-disabled {
+	cursor: default;
+}
+
+.lcbi-block-menu-row-icon,
+.lcbi-block-menu-row-chevron {
+	display: inline-flex;
+	align-items: center;
+	color: var(--text-muted);
+}
+
+.lcbi-block-menu-row-icon svg,
+.lcbi-block-menu-row-chevron svg {
+	width: 18px;
+	height: 18px;
+}
+
+.lcbi-block-menu-row-label {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.lcbi-block-menu-row-chevron {
+	justify-content: flex-end;
+	color: var(--text-faint);
+}
+
+.markdown-rendered .lcbi-code-block {
+	margin: 1em 0;
+	overflow: hidden;
+	border: 1px solid var(--lcbi-code-border);
+	border-radius: var(--lcbi-code-radius);
+	background: var(--lcbi-code-bg);
+	transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.markdown-rendered .lcbi-code-block:hover {
+	border-color: var(--lcbi-code-hover-border);
+	box-shadow: 0 0 0 2px var(--lcbi-code-hover-border);
+	box-shadow: 0 0 0 2px var(--lcbi-code-hover-ring);
+}
+
+.markdown-rendered .lcbi-code-title {
+	padding: 12px 30px 4px;
+	color: var(--lcbi-code-title);
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.markdown-rendered .lcbi-code-body {
+	display: grid;
+	grid-template-columns: 44px minmax(0, 1fr);
+	align-items: start;
+	padding: 8px 0 14px;
+}
+
+.markdown-rendered .lcbi-line-numbers {
+	padding-right: 14px;
+	color: var(--lcbi-code-line-number);
+	font-family: var(--font-monospace);
+	font-size: var(--code-size);
+	line-height: var(--lcbi-code-line-height);
+	text-align: right;
+	user-select: none;
+}
+
+.markdown-rendered .lcbi-line-numbers span {
+	display: block;
+	height: calc(var(--code-size) * var(--lcbi-code-line-height));
+}
+
+.markdown-rendered .lcbi-code-body pre {
+	min-width: 0;
+	margin: 0;
+	padding: 0 22px 0 0;
+	overflow: auto;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+}
+
+.markdown-rendered .lcbi-code-body pre code {
+	display: block;
+	padding: 0;
+	background: transparent;
+	font-size: var(--code-size);
+	line-height: var(--lcbi-code-line-height);
+	white-space: pre;
+}
+
+.markdown-rendered .lcbi-code-body pre::before,
+.markdown-rendered .lcbi-code-body pre::after {
+	display: none;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+	background: var(--lcbi-code-bg);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+	position: relative;
+	padding-top: 34px;
+	border-top: 1px solid var(--lcbi-code-border);
+	border-right: 1px solid var(--lcbi-code-border);
+	border-left: 1px solid var(--lcbi-code-border);
+	border-top-left-radius: var(--lcbi-code-radius);
+	border-top-right-radius: var(--lcbi-code-radius);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin::before {
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	color: var(--lcbi-code-title);
+	font-family: var(--font-interface);
+	font-size: 13px;
+	line-height: 1.4;
+	content: "代码块";
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock:not(.HyperMD-codeblock-begin) {
+	border-right: 1px solid var(--lcbi-code-border);
+	border-left: 1px solid var(--lcbi-code-border);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+	padding-bottom: 14px;
+	border-bottom: 1px solid var(--lcbi-code-border);
+	border-bottom-right-radius: var(--lcbi-code-radius);
+	border-bottom-left-radius: var(--lcbi-code-radius);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock .cm-indent::before,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock .cm-hmd-list-indent::before,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin .cm-indent::before,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin .cm-hmd-list-indent::before,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end .cm-indent::before,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end .cm-hmd-list-indent::before {
+	display: none !important;
+	border: 0 !important;
+	content: none !important;
+}
