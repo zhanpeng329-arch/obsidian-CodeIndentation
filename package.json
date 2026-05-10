@@ -1,7 +1,7 @@
 {
-	"name": "list-code-block-indent",
+	"name": "obsidian-sample-plugin",
 	"version": "1.0.0",
-	"description": "Keeps fenced code blocks aligned with the current unordered list level in Obsidian.",
+	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {
@@ -13,18 +13,17 @@
 	"keywords": [],
 	"license": "0-BSD",
 	"devDependencies": {
-		"@eslint/js": "9.30.1",
 		"@types/node": "^16.11.6",
 		"esbuild": "0.25.5",
 		"eslint-plugin-obsidianmd": "0.1.9",
 		"globals": "14.0.0",
-		"jiti": "2.6.1",
 		"tslib": "2.4.0",
 		"typescript": "^5.8.3",
-		"typescript-eslint": "8.35.1"
+		"typescript-eslint": "8.35.1",
+		"@eslint/js": "9.30.1",
+		"jiti": "2.6.1"
 	},
 	"dependencies": {
-		"@codemirror/view": "^6.42.1",
 		"obsidian": "latest"
 	}
 }

@@ -1,10 +1,11 @@
 {
-	"id": "list-code-block-indent",
-	"name": "List Code Block Indent",
+	"id": "sample-plugin",
+	"name": "Sample Plugin",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Keeps fenced code blocks aligned with the current unordered list level.",
-	"author": "zhanpeng329",
-	"authorUrl": "https://github.com/zhanpeng329-arch",
+	"description": "Demonstrates some of the capabilities of the Obsidian API.",
+	"author": "Obsidian",
+	"authorUrl": "https://obsidian.md",
+	"fundingUrl": "https://obsidian.md/pricing",
 	"isDesktopOnly": false
 }
